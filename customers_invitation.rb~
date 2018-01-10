@@ -4,13 +4,13 @@ require 'json'
 class CustomersInvitation
 
 	# which are x kms away from provided base location's coordinates.
-	# attributes defines for customers, invited_customers, base_latitude, base_longitude
+
 	attr_accessor :customers, :invited_customers, :base_latitude, :base_longitude
-	def initialize(filepath=File.expand_path("customers.json"), base_latitude="53.339428", base_longitude="-6.257664")
+	def initialize(filepath=File.expand_path("customers.json"), dublin_latitude="53.339428", dublin_longitude="-6.257664")
 		begin
 			@customers = _parse(filepath)
-			@base_latitude = base_latitude
-			@base_longitude = base_longitude
+			@base_latitude = dublin_latitude
+			@base_longitude = dublin_longitude
 		rescue => err
 			raise err
 		end
